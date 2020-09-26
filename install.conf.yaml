@@ -6,7 +6,9 @@
     - '~'
 
 - link:
+    ~/.config/nvim/init.vim: nvim/config/init.vim
     ~/.config/git/exclude: git/exclude
+    ~/.local/share/nvim/site: nvim/runtime
 
 - shell:
     - git config --file ~/.config/git/config include.path $PWD/git/config
