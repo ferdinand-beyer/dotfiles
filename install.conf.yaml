@@ -6,18 +6,18 @@
     - '~'
 
 - link:
-    ~/.zshrc: zsh/zshrc
-    ~/.p10k.zsh: zsh/p10k.zsh
-    ~/.config/nvim/init.vim: nvim/config/init.vim
     ~/.config/git/exclude: git/exclude
+    ~/.config/nvim/init.vim: nvim/config/init.vim
+    ~/.local/pkg/ohmyzsh: third-party/ohmyzsh
     ~/.local/share/nvim/site: nvim/runtime
-
-- shell:
-    - description: Install ZSH
-      command: sh zsh/install.sh
-    - git config --file ~/.config/git/config include.path $PWD/git/config
-
-- link:
-    ~/.zsh/custom/:
+    ~/.local/share/zsh/custom/:
         path: zsh/custom/*
         glob: true
+    ~/.local/share/zsh/custom/plugins/zsh-syntax-highlighting: third-party/zsh-syntax-highlighting
+    ~/.local/share/zsh/custom/themes/powerlevel10k: third-party/powerlevel10k
+    ~/.p10k.zsh: zsh/p10k.zsh
+    ~/.zshrc: zsh/zshrc
+
+- shell:
+    - git config --file ~/.config/git/config include.path $PWD/git/config
+

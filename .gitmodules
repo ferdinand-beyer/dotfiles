@@ -2,3 +2,12 @@
 	path = third-party/dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+[submodule "ohmyzsh"]
+	path = third-party/ohmyzsh
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "powerlevel10k"]
+	path = third-party/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "zsh-syntax-highlighting"]
+	path = third-party/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
