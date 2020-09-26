@@ -1,2 +1,12 @@
+- defaults:
+    link:
+        create: true
+
 - clean:
     - '~'
+
+- link:
+    ~/.config/git/exclude: git/exclude
+
+- shell:
+    - git config --file ~/.config/git/config include.path $PWD/git/config
