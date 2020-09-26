@@ -5,7 +5,12 @@
 - clean:
     - '~'
 
+- shell:
+    - sh zsh/install.sh
+
 - link:
+    ~/.zshrc: zsh/zshrc
+    ~/.p10k.zsh: zsh/p10k.zsh
     ~/.config/nvim/init.vim: nvim/config/init.vim
     ~/.config/git/exclude: git/exclude
     ~/.local/share/nvim/site: nvim/runtime
