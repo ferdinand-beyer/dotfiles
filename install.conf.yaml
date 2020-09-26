@@ -13,5 +13,11 @@
     ~/.local/share/nvim/site: nvim/runtime
 
 - shell:
-    - sh zsh/install.sh
+    - description: Install ZSH
+      command: sh zsh/install.sh
     - git config --file ~/.config/git/config include.path $PWD/git/config
+
+- link:
+    ~/.zsh/custom/:
+        path: zsh/custom/*
+        glob: true
