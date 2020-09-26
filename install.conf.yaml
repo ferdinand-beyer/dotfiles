@@ -5,9 +5,6 @@
 - clean:
     - '~'
 
-- shell:
-    - sh zsh/install.sh
-
 - link:
     ~/.zshrc: zsh/zshrc
     ~/.p10k.zsh: zsh/p10k.zsh
@@ -16,4 +13,5 @@
     ~/.local/share/nvim/site: nvim/runtime
 
 - shell:
+    - sh zsh/install.sh
     - git config --file ~/.config/git/config include.path $PWD/git/config
