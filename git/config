@@ -3,6 +3,7 @@
 	name = Ferdinand Beyer
 	email = fb@fbeyer.com
 [core]
+	editor = nvim
 	excludesfile = ~/.config/git/exclude
 	pager = less -X -F
 [credential]

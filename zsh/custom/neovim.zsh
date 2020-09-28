@@ -1,3 +1,5 @@
+export EDITOR=nvim
+
 alias vim=nvim
 alias ex='nvim -e'
 alias view='nvim -R'
