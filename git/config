@@ -4,7 +4,7 @@
 	email = fb@fbeyer.com
 [core]
 	editor = nvim
-	excludesfile = ~/.config/git/exclude
+	excludesfile = ~/.config/git/ignore
 	pager = less -X -F
 [credential]
     helper = osxkeychain

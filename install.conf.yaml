@@ -7,7 +7,7 @@
     - '~'
 
 - link:
-    ~/.config/git/exclude: git/exclude
+    ~/.config/git/ignore: git/ignore
     ~/.config/nvim/init.vim: nvim/config/init.vim
     ~/.local/pkg/ohmyzsh: third-party/ohmyzsh
     ~/.local/share/nvim/site: nvim/runtime
