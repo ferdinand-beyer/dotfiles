@@ -9,6 +9,9 @@
 - link:
     ~/.config/git/ignore: git/ignore
     ~/.config/nvim/init.vim: nvim/config/init.vim
+    ~/.local/bin/:
+        path: tools/*
+        glob: true
     ~/.local/pkg/ohmyzsh: third-party/ohmyzsh
     ~/.local/share/nvim/site: nvim/runtime
     ~/.local/share/zsh/custom/:

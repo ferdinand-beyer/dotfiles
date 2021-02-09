@@ -1,0 +1,93 @@
+#!/usr/bin/env python3
+
+import random
+
+
+def interactive_cmp(a, b):
+    """Ask the user to rank two options, by selecting the more important one.
+    """
+    prompt = 'Your choice: '
+    while True:
+        print('[1]', a)
+        print('[2]', b)
+        choice = input(prompt)
+        print()
+        if choice == '1':
+            return 1
+        if choice == '2':
+            return -1
+        prompt = 'Invalid choice.  Try again: '
+
+
+class CachingCompare:
+
+    """Caching 'cmp' function."""
+
+    def __init__(self, cmp=interactive_cmp):
+        self.cmp = cmp
+        self.cache = {}
+
+    def __call__(self, a, b):
+        try:
+            return self.cache[a, b]
+        except KeyError:
+            pass
+        c = self.cmp(a, b)
+        self.cache[a, b] = c
+        self.cache[b, a] = -c
+        return c
+
+
+def partition_into_pairs(choices):
+    """Partition a sequence of choices into pairs."""
+    L = list(choices)
+    random.shuffle(L)
+    n, r = divmod(len(L), 2)
+    return zip(L[0:n], L[n:]), L[-1] if r else None
+
+
+def winners(choices, cmp):
+    """Compare a sequence of choices pairwise and return the 'winners',
+    e.g. the values that compare greater.
+    """
+    pairs, extra = partition_into_pairs(choices)
+    for a, b in pairs:
+        if cmp(a, b) > 0:
+            yield a
+        else:
+            yield b
+    if extra is not None:
+        yield extra
+
+
+def greatest(choices, cmp):
+    """Find the greatest choice given a comparator function."""
+    ws = list(winners(choices, cmp))
+    while len(ws) > 1:
+        ws = list(winners(ws, cmp))
+    return ws[0]
+
+
+def prioritize(choices):
+    """Prioritize a sequence of choices."""
+    remaining = set(choices)
+    ordered = []
+    cmp = CachingCompare()
+    while remaining:
+        winner = greatest(remaining, cmp)
+        ordered.append(winner)
+        remaining.remove(winner)
+    return ordered
+
+
+def main():
+    import sys
+    choices = sys.argv[1:]
+    ordered = prioritize(choices)
+    print('Your order:')
+    for i, x in enumerate(ordered):
+        print('{0:3d}) {1}'.format(i + 1, x))
+
+
+if __name__ == '__main__':
+    main()
