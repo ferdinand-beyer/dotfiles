@@ -7,6 +7,7 @@
     - '~'
 
 - link:
+    ~/.config/clojure/deps.edn: third-party/clojure-deps-edn/deps.edn
     ~/.config/git/ignore: git/ignore
     ~/.config/nvim/init.vim: nvim/config/init.vim
     ~/.local/bin/:

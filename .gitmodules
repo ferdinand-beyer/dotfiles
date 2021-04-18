@@ -11,3 +11,6 @@
 [submodule "zsh-syntax-highlighting"]
 	path = third-party/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "third-party/clojure-deps-edn"]
+	path = third-party/clojure-deps-edn
+	url = https://github.com/practicalli/clojure-deps-edn.git
