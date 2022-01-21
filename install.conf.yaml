@@ -10,6 +10,7 @@
     ~/.config/clojure/deps.edn: third-party/clojure-deps-edn/deps.edn
     ~/.config/git/ignore: git/ignore
     ~/.config/nvim/init.vim: nvim/config/init.vim
+    ~/.lein/profiles.clj: lein/profiles.clj
     ~/.local/bin/:
         path: tools/*
         glob: true
