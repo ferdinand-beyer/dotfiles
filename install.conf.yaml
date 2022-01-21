@@ -23,6 +23,7 @@
     ~/.local/share/zsh/custom/themes/powerlevel10k: third-party/powerlevel10k
     ~/.p10k.zsh: zsh/p10k.zsh
     ~/.zshrc: zsh/zshrc
+    ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
 
 - shell:
     - git config --file ~/.config/git/config include.path $PWD/git/config

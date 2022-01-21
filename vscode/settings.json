@@ -1,0 +1,24 @@
+{
+    "calva.showCalvaSaysOnStart": false,
+    "editor.fontFamily": "'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.renderFinalNewline": false,
+    "files.insertFinalNewline": true,
+    "terminal.integrated.fontFamily": "'MesloLGS NF'",
+    "workbench.colorTheme": "Default Light+",
+    "workbench.colorCustomizations": {
+        "[Default Light+]": {
+            "terminal.background": "#2c2c2c",
+            "terminal.foreground": "#f0f0f0"
+        }
+    },
+    "git.confirmSync": false,
+    "[clojure]": {
+        "files.trimTrailingWhitespace": true,
+        "editor.unicodeHighlight.allowedCharacters": {
+            "꞉": true,
+            " ": true
+        }
+    },
+    "diffEditor.ignoreTrimWhitespace": false
+}
