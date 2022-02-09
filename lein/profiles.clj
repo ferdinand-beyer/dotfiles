@@ -1,3 +1,2 @@
-{:user [#_:user/reveal]
- :user/reveal {:dependencies [[vlaaad/reveal "1.3.263"]]
-               :repl-options {:nrepl-middleware [vlaaad.reveal.nrepl/middleware]}}}
+{:user {:dependencies [[org.clojure/tools.namespace "1.2.0"]
+                       [djblue/portal "0.20.1"]]}}
