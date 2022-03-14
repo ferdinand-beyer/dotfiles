@@ -17,3 +17,5 @@
 	defaultBranch = main
 [pull]
 	rebase = true
+[grep]
+	lineNumber = true
