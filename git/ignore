@@ -11,6 +11,10 @@ __pycache__
 
 # Clojure
 .cache/
+.cpcache/
 .calva/
 .lsp/
 .portal/
+
+# Visual Studio Code
+.vscode/
