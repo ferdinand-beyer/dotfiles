@@ -8,4 +8,8 @@ Uses [dotbot][dotbot] to install the setup.
 2. `cd` into the local directory.
 3. Run `./install`
 
+One time configuration:
+
+* `p10k configure`
+
 [dotbot]: https://github.com/anishathalye/dotbot
