@@ -30,7 +30,10 @@ Setup:
 brew install nvim
 ```
 
-Start and run: `:PluginInstall`
+Install plugins:
 
+```
+nvim -c PlugInstall
+```
 
 [dotbot]: https://github.com/anishathalye/dotbot
