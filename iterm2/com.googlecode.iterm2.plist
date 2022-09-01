@@ -358,7 +358,13 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>BE026659-1587-450D-BCC6-3C4C73661D6C</string>
+	<key>DimOnlyText</key>
+	<false/>
+	<key>EnableDivisionView</key>
+	<true/>
 	<key>HapticFeedbackForEsc</key>
+	<false/>
+	<key>HideScrollbar</key>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
@@ -1107,8 +1113,12 @@
 	</array>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.14895687955097087</real>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>1</integer>
+	<integer>5</integer>
+	<key>UseBorder</key>
+	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 </dict>
