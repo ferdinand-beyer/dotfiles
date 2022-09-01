@@ -36,4 +36,12 @@ Install plugins:
 nvim -c PlugInstall
 ```
 
+### [Fira Code][font-fira-code]
+
+```
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code
+```
+
 [dotbot]: https://github.com/anishathalye/dotbot
+[font-fira-code]: https://github.com/tonsky/FiraCode
