@@ -1,0 +1,6 @@
+{:linters {:refer-all {:exclude [clojure.test]}
+           :unresolved-var {:exclude [ring.util.http-response]}}
+
+ :lint-as {mount.core/defstate clj-kondo.lint-as/def-catch-all
+           clojure.test.check.properties/for-all clojure.core/let
+           clojure.test.check.clojure-test/defspec clj-kondo.lint-as/def-catch-all}}
