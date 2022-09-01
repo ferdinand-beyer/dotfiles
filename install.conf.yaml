@@ -8,6 +8,7 @@
 
 - link:
     ~/.config/clojure/deps.edn: third-party/clojure-deps-edn/deps.edn
+    ~/.config/iterm2/custom: iterm2
     ~/.config/git/ignore: git/ignore
     ~/.config/nvim/init.vim: nvim/config/init.vim
     ~/.lein/profiles.clj: lein/profiles.clj

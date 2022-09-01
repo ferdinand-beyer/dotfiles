@@ -23,7 +23,7 @@ brew install --cask iterm2
 
 Setup:
 * _iTerm2_, _Preferences..._, _General_, _Preferences_, _Load preferences from a custom folder or URL_
-* `~/.config/iterm2`
+* `~/.config/iterm2/custom`
 
 ### nvim
 ```
