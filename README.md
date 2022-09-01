@@ -8,8 +8,20 @@ Uses [dotbot][dotbot] to install the setup.
 2. `cd` into the local directory.
 3. Run `./install`
 
-One time configuration:
+## Specific
 
-* `p10k configure`
+### Powerlevel 10k
+
+One-time configuration to install custom fonts:
+
+`p10k configure`
+
+### iTerm 2
+
+`brew install --cask iterm2`
+
+iTerm2 > Preferences... > General > Preferences > Load preferences from a custom folder or URL
+
+`~/.config/iterm2`
 
 [dotbot]: https://github.com/anishathalye/dotbot
