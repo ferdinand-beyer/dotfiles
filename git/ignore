@@ -17,4 +17,4 @@ __pycache__
 .portal/
 
 # Visual Studio Code
-.vscode/
+.vscode/settings.json

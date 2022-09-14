@@ -85,5 +85,10 @@
     ],
     "redhat.telemetry.enabled": false,
     "calva.paredit.defaultKeyMap": "strict",
-    "codesnap.shutterAction": "copy"
+    "codesnap.shutterAction": "copy",
+    "q-lint.trace.server": "verbose",
+    "calva.definitionProviderPriority": [
+        "lsp",
+        "repl"
+    ]
 }
