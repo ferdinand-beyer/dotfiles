@@ -17,6 +17,7 @@
     ~/.local/bin/:
         path: tools/*
         glob: true
+    ~/.local/bin/ungraffle: tools/graffle
     ~/.local/pkg/ohmyzsh: third-party/ohmyzsh
     ~/.local/share/nvim/site: nvim/runtime
     ~/.local/share/zsh/custom/:

@@ -1,0 +1,104 @@
+#!/bin/bash
+## Usage:
+##         [un]graffle [-g] [-h] [-u] <path>...
+##
+## Convert an OmniGraffle .graffle file to XML and vice versa.
+##
+## The XML form is more suitable to be committed to version control.
+##
+## Options:
+##         -g    Find all files to (un)graffle in the Git repository
+##         -h    Show this help message and exit
+##         -u    Ungraffle: Convert .graffle.plist files to .graffle
+##
+set -e -u
+
+usage() {
+    sed -n 's/^## \{0,1\}\(.*\)/\1/p' $0
+}
+
+error() {
+    echo "$(basename "$0"): $1" >&2
+}
+
+graffle_file() {
+    echo "$1"
+    local curdir="$(pwd)"
+    cd "$(dirname "$1")"
+    if [ -e "data.plist" ]; then
+        error "file exists: $curdir/data.plist" >&2
+        exit 1
+    fi
+    plutil -convert binary1 -o data.plist "$1"
+    zip "$(basename "$1" '.plist')" data.plist
+    rm data.plist
+    cd "$curdir"
+}
+
+ungraffle_file() {
+    echo "$1"
+    unzip -p "$1" data.plist |\
+        plutil -convert xml1 -o "$1.plist" -
+}
+
+graffle_dir() {
+    find "$1" -type f -name '*.graffle.plist' | while read -r f; do
+        graffle_file "$f"
+    done
+}
+
+ungraffle_dir() {
+    find "$1" -type f -name '*.graffle' | while read -r f; do
+        ungraffle_file "$f"
+    done
+}
+
+MODE="$(basename "$0")"
+FILES=()
+
+while getopts ":hug" opt; do
+    case $opt in
+        h)
+            usage
+            exit 0
+            ;;
+        u)
+            MODE=ungraffle
+            ;;
+        g)
+            FILES+=("$(git rev-parse --show-toplevel)")
+            ;;
+        \?)
+            echo "unknown option: -$OPTARG"
+            exit 1
+            ;;
+    esac
+done
+
+shift $((OPTIND - 1))
+
+while [[ -n "${1:-}" ]]; do
+    if [[ ! -e "$1" ]]; then
+        error "no such file or directory: $1"
+        exit 1
+    fi
+    FILES+=("$1")
+    shift
+done
+
+if [[ "${#FILES[@]}" -eq 0 ]]; then
+    error "no paths specified"
+    exit 1
+fi
+
+if [[ "$MODE" != "ungraffle" ]]; then
+    MODE=graffle
+fi
+
+for f in "${FILES[@]}"; do
+    if [[ -d "$f" ]]; then
+        ${MODE}_dir "$f"
+    else
+        ${MODE}_file "$f"
+    fi
+done
