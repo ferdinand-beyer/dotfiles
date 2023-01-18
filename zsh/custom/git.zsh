@@ -19,4 +19,4 @@ git_rebase_branches() {
     git checkout $orig
 }
 
-alias gsync='gcm && gfa && git rebase && git_rebase_branches && gbda'
+alias gitsync='gcm && gfa && git rebase && git_rebase_branches && gbda'
