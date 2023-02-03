@@ -15,5 +15,3 @@ __pycache__
 .calva/
 .portal/
 
-# Visual Studio Code
-.vscode/settings.json
