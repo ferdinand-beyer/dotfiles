@@ -1,29 +1,40 @@
 # vim:ft=gitconfig:noet:
-[user]
-	name = Ferdinand Beyer
-	email = fb@fbeyer.com
 [core]
 	editor = nvim
 	excludesfile = ~/.config/git/ignore
 	pager = less -X -F
+
+[init]
+	defaultBranch = main
+
+[user]
+	name = Ferdinand Beyer
+	email = fb@fbeyer.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJY0UCWqSw7aTZdKjH8Tdvehqa1KvByyiRtds1WwE1sC
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgsign = true
+
 [credential]
-    helper = osxkeychain
+	helper = osxkeychain
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[commit]
-	gpgsign = true
-[tag]
-	gpgsign = true
-[gpg]
-	format = ssh
-[gpg "ssh"]
-	defaultKeyCommand = ssh-add -L
-[init]
-	defaultBranch = main
+
 [pull]
 	rebase = true
+
 [grep]
 	lineNumber = true
