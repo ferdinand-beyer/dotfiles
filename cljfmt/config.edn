@@ -1,1 +1,1 @@
-{:indents {#"^for-" [[:block 1]]}}
+{:extra-indents {#"^for-" [[:block 1]]}}
