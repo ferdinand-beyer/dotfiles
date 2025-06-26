@@ -20,3 +20,4 @@ git_rebase_branches() {
 }
 
 alias gitsync='gcm && gfa && git rebase && git_rebase_branches && gbda'
+alias gmff='git merge --ff-only'
